@@ -15,7 +15,7 @@ In this ReadME, the general development of the project will be described.
 
 After we have a working model, we decided to think of some ways to improve the model.
 
-The first one, we thought that making a smoothing to the log-mel graphs would improve the generalization capability of the model. We applied an image smoothing from openCV library. The feature pipeline __swedish_whisper_features_mod.ipynb__ contains a feature pipeline in which each log-mel image is applied a smoothing transformation.
+The first one, we thought that making a smoothing to the log-mel graphs would improve the generalization capability of the model. We thought of it as being some kind of regularization technique, make it less prone to overfitting. We applied an image smoothing from openCV library. The feature pipeline __swedish_whisper_features_mod.ipynb__ contains a feature pipeline in which each log-mel image is applied a smoothing transformation.
 
 For instance, this is how a log-mel graph usually looks:
 
@@ -33,5 +33,5 @@ At a certain point after 2000 steps, we saw that there was still good WER evalua
 ![Train Augmented data](img/train_2.jpg)
 
 
-Last thing we tried was to do hyperparameter tuning with both external HP search tools, *sigopt* and *optuna*, but as we said, Google Collab was not collaborating anymore (pun intended). Hyperparameter search is seen in the notebook __swedish_whisper_train_hyper.ipynb__. 
+Last thing we tried was to do hyperparameter tuning with both external HP search tools, *sigopt* and *optuna*, but as we said, Google Collab was not collaborating anymore (pun intended), and our HP search kept crashing when we ran it. Hyperparameter search is seen in the notebook __swedish_whisper_train_hyper.ipynb__. 
 
