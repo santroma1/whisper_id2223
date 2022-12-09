@@ -15,7 +15,18 @@ In this ReadME, the general development of the project will be described.
 
 After we have a working model, we decided to think of some ways to improve the model.
 
-The first one, we thought that making a smoothing to the log-mel graphs would improve the generalization capability of the model. We applied an image smoothing from openCV library. The feature pipeline __swedish_whisper_features_mod.ipynb__ contains a feature pipeline in which each log-mel image is applied a smoothing transformation. The *augmented* dataset is then uploaded to huggingface. We then trained the model again, but at this point we think Google Collab was quite tired of us, cause it kept crashing, and we were never able to complete training. 
+The first one, we thought that making a smoothing to the log-mel graphs would improve the generalization capability of the model. We applied an image smoothing from openCV library. The feature pipeline __swedish_whisper_features_mod.ipynb__ contains a feature pipeline in which each log-mel image is applied a smoothing transformation.
+
+For instance, this is how a log-mel graph usually looks:
+
+![Log mel](img/log_mel1.jpg)
+
+And a keen eye, might see the difference with the next image, which is smoothed. We believed this smoothing would improve the generalization error. 
+
+![Log mel smoothed](img/log_mel2.jpg)
+
+
+The *augmented* dataset is then uploaded to huggingface. We then trained the model again, but at this point we think Google Collab was quite tired of us, cause it kept crashing, and we were never able to complete training. 
 
 At a certain point after 2000 steps, we saw that there was still good WER evaluation metric, but it was not gonna get better than the original model, so we dropped this idea. 
 
